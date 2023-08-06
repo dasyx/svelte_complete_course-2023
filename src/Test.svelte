@@ -1,5 +1,14 @@
 <script>
-    export let name = 'Bob';
+    export let name = "Bob";
 </script>
 
-<h1>Hello {name}</h1>
+<h3>Hello {name}</h3>
+
+<style>
+    h3 {
+        letter-spacing: 0.5cm;
+        font-size: 30px;
+        text-align: center;
+        color: blue;
+    }
+</style>

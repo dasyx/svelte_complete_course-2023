@@ -10,7 +10,7 @@
     }, 1000);
   </script>
   
-  <h1>Hello Awesome Svelte Developer</h1>
+  <h2>You rock and roll !!!</h2>
   <p style="color: {favoriteColor};">{name}</p>
   <p style="font-size: {fontSize}px;">This is a paragraph</p>
   <p>{favoriteNumber}</p>

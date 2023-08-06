@@ -1,16 +1,12 @@
 <script>
-  import Funny from "./Funny.svelte";
-  import Test from "./Test.svelte";
-  //let size = 150;
-  let name = 'David';
+    import ColorPicker from "./ColorPicker.svelte";
 </script>
 
-<!-- <Funny bind:fontSize={size} /> -->
-<Test {name}/>
+<ColorPicker />
 
 <style>
-  :root {
-    background-color: black;
-    color: white;
-  }
+    :root {
+        background-color: black;
+        color: white;
+    }
 </style>

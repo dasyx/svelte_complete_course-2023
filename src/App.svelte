@@ -1,12 +1,11 @@
 <script>
-    import Mover from "./Mover.svelte";
+    import Form from "./Form.svelte";
 </script>
 
-<Mover />
+<Form />
 
 <style>
     :root {
-        background-color: black;
-        color: white;
+        background-color: #fff;
     }
 </style>

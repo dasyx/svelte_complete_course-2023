@@ -2,17 +2,19 @@
     let name = 'david';
     let age = 40;
     import { createEventDispatcher } from 'svelte';
+    // createEventDispatcher returns an object with a dispatch method
+    // that we can use to dispatch events
     const dispatch = createEventDispatcher();
     function onSubmit(e) {
-        /* alert(`Name: ${name} Age: ${age}`); */
         dispatch('submit', {
             name,
             age
         });
+        alert(`Submitted! Name: ${name}, Age: ${age}`);
     }
 </script>
 
-<form>
+<form on:submit|preventDefault={onSubmit}>
     <label for="name">Name</label>
     <input type="text" bind:value={name} id="name">
     <label for="age">Age</label>

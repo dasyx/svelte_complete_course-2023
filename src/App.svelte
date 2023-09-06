@@ -1,13 +1,14 @@
 <script>
-    //import Container from "./Container.svelte";
-    //import Button from "./Button.svelte";
-    //import TaskInput from "./TaskInput.svelte";
-    //import CounterControls from "./CounterControls.svelte";
-    import ThemeSelector from './ThemeSelector.svelte';
+  //import Container from "./Container.svelte";
+  //import Button from "./Button.svelte";
+  //import TaskInput from "./TaskInput.svelte";
+  //import CounterControls from "./CounterControls.svelte";
+  //import ChildEvent from "./ChildEvent.svelte";
+  import ThemeSelector from "./ThemeSelector.svelte";
 
-    // POUR GEER L'AFFICHAGE DU FORMULAIRE (FORM.SVELTE)
+  // POUR GEER L'AFFICHAGE DU FORMULAIRE (FORM.SVELTE)
 
-    /*  function onFormSubmit(e) {
+  /*  function onFormSubmit(e) {
         console.log(e);
         const { name, age } = e.detail;
         console.log(name, age, "details from event");
@@ -16,9 +17,9 @@
         alert("clicked");
     } */
 
-    // POUR GERER L'AFFICHAGE DES COULEURS (BUTTON.SVELTE)
+  // POUR GERER L'AFFICHAGE DES COULEURS (BUTTON.SVELTE)
 
-    /* function handleColors(event) {
+  /* function handleColors(event) {
         $: color = event.detail.color;
         $: backgroundColor = event.detail.backgroundColor;
         console.log(event.detail.color, event.detail.backgroundColor);
@@ -27,17 +28,17 @@
     let color = "";
     let backgroundColor = ""; */
 
-    // POUR GERER L'AFFICHAGE DES TACHES (TASKINPUT.SVELTE)
+  // POUR GERER L'AFFICHAGE DES TACHES (TASKINPUT.SVELTE)
 
-    /* let tasks = [];
+  /* let tasks = [];
 
     function handleNewTask(event) {
         tasks = [...tasks, event.detail];
     } */
 
-    // POUR GERER L'AFFICHAGE DU COMPTEUR (COUNTER.SVELTE)
+  // POUR GERER L'AFFICHAGE DU COMPTEUR (COUNTER.SVELTE)
 
-    /* let count = 0;
+  /* let count = 0;
 
     function handleChange(event) {
         count += event.detail;
@@ -47,12 +48,23 @@
         count = 0;
     } */
 
-    // POUR GERER L'AFFICHAGE DU THEME (THEMESELECTOR.SVELTE)
+  // POUR GERER L'AFFICHAGE DU THEME (THEMESELECTOR.SVELTE)
 
-    function handleThemeChange(event) {
+  function handleThemeChange(event) {
     document.body.className = event.detail;
   }
+  /* function onCustomEvent(event) {
+    alert(event.detail);
+  } */
+  let name = 'Joe';
+  $: capitalizedName = name.toUpperCase();
+  // dollar sign = reactive statement = re-evaluate when the value of the variable changes
 </script>
+
+<h2>Hello {name}!</h2>
+<h3>{capitalizedName}</h3>
+
+<input type="text" bind:value={name} />
 
 <!-- <Container on:submit={onFormSubmit} on:click={onClick} /> -->
 <!-- <Button on:colors={handleColors} /> -->
@@ -73,3 +85,5 @@
 <CounterControls on:change={handleChange} on:reset={handleReset} /> -->
 
 <ThemeSelector on:themeChange={handleThemeChange} />
+
+<!-- <ChildEvent on:custom_event={onCustomEvent} /> -->
